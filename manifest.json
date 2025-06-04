@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "Discord Solana Address Scanner",
+    "version": "1.0",
+    "description": "Scans Discord messages for Solana addresses and integrates with Bloom bot",
+    "permissions": [
+      "storage", 
+      "tabs", 
+      "activeTab",
+      "clipboardWrite",
+      "scripting",
+      "identity",
+      "identity.email"
+    ],
+    "host_permissions": [
+      "*://discord.com/*",
+      "*://*.telegram.org/*",
+      "*://api.openai.com/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["*://discord.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      },
+      {
+        "matches": ["*://*.telegram.org/*"],
+        "js": ["telegram-helper.js"],
+        "run_at": "document_idle"
+      }
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "image/icon.png"
+    }
+  }

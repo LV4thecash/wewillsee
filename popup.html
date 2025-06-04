@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Discord Solana Scanner</title>
+  <link href="main.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ponomar&family=Roboto:ital,wdth,wght@0,88.1,100..900;1,88.1,100..900&family=Tektur:wght@400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="tab">
+    <button class="tablinks text-red text-bold" id="tab-account" style="border:#FF0000 5px solid">ACCOUNT</button>
+    <button class="tablinks text-red text-bold" id="tab-address">ADDRESS</button>
+  </div>
+  <div id="content-account" class="tabcontent">
+    <div class="tab-container">
+      <div class="flex-grow-1 display-flex justify-center align-center" style="height:350px;">
+        <img src="image/logo1.png" alt="logo" width="150px" height="225px">
+      </div>
+      <!-- <div class="flex-grow-1 display-flex justify-center"> -->
+      <div class="flex-grow-1 p-5 m-10 justify-center align-center">
+        <!-- connection state -->
+        <div class="display-flex flex-col" id="container-connect">
+          <span class="flex-grow-1 text-nowrap text-center text-14" id="item-connect" style="text-align:center;">&#9679;
+            Connected</span>
+          <button class="flex-grow-1 p-5 mt-20 text-14 btn-style" id="item-disconnect-btn">Disconnect</span>          
+        </div>
+
+        <!-- license -->
+        <table class="text-bold" id="container-license" style="margin:auto;">
+          <tbody>
+            <tr>
+              <td class="p-5 text-nowrap"><span class="text-white text-14">Device ID:</span></td>
+              <td><span class="text-white text-14" id="device-id"></span></td>
+            </tr>
+            <tr>
+              <td class="p-5"><span class="text-white text-14">License:&nbsp;</span></td>
+              <td>
+                <input id="license-input" type="text" class="text-14" placeholder="input license">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- </div> -->
+
+        <div class="text-bold text-14 mt-20" style="text-align:center;color:gray;">@supported By Lv4, 2025</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-address" class="tabcontent">
+    <div class="tab-container">
+      <div class="display-flex flex-col justify-center align-center mt-30">
+
+        <!-- logo image -->
+        <img src="image/logo1.png" alt="logo" width="60px" height="90px">
+        <!-- address -->
+        <p class="text-center text-15 text-red text-bold">Solana Addresses</p>
+      </div>
+      <div class="flex-grow-1 display-flex justify-center" style="margin: 15px;">
+        <div class="license display-flex flex-col flex-grow-1">
+
+          <div class="flex-grow-1 p-5" id="addresses-container"
+            style="overflow-y: auto; overflow-x:hidden; height:100px;">
+            <p>No addresses found yet.</p>
+          </div>
+          <!-- clear & copy -->
+          <div class="actions display-flex flex-row mt-10">
+            <button class="flex-grow-1 p-5 m-5 btn-style-rev" id="clear-btn">Clear All</button>
+            <button class="flex-grow-1 p-5 m-5 btn-style-rev" id="copy-all-btn">Copy All</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+  <script src="blowfish.js"></script>
+</body>
+
+</html>
